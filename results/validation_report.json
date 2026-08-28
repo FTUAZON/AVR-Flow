@@ -1,0 +1,38 @@
+{
+  "join": {
+    "calendar_rows_before": 1393570,
+    "rows_after_listing_join": 1393570,
+    "rows_dropped": 0,
+    "input_partitions": 1,
+    "broadcast_hash_joins": 1,
+    "sort_merge_joins": 0,
+    "join_type": "many-to-one",
+    "join_key": "listing_id",
+    "calendar_key_type": "string",
+    "listing_key_type": "string",
+    "reviews_joined_rowwise": false,
+    "valid_price_rows": 934542,
+    "null_price_rows": 459028,
+    "occupied_rows": 459028,
+    "occupied_rows_with_price": 0
+  },
+  "aggregation": {
+    "partitions": 4,
+    "groups": 3818,
+    "seconds": 0.8837
+  },
+  "validation": {
+    "parallel_groups": 3818,
+    "baseline_groups": 3818,
+    "partition_keys_match": true,
+    "max_differences": {
+      "observed_nights": 0.0,
+      "occupied_nights": 0.0,
+      "occupancy_rate": 1.1102230246251565e-16,
+      "estimated_revenue": 0.0,
+      "average_booked_price": 0.0
+    },
+    "tolerance": 1e-06,
+    "passed": true
+  }
+}

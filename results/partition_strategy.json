@@ -1,0 +1,203 @@
+{
+  "chosen_key": "listing_id",
+  "reason": "Listing-owned key survives the calendar-listing join and partitions calendar events by listing.",
+  "prediction": {
+    "column": "listing_id",
+    "source_file": "calendar + reviews",
+    "distinct": 3818,
+    "min": 365,
+    "median": 365,
+    "max": 365,
+    "skew_ratio": 1.0,
+    "viable": true,
+    "rejected_because": ""
+  },
+  "all_candidates": [
+    {
+      "column": "listing_id",
+      "source_file": "calendar + reviews",
+      "distinct": 3818,
+      "min": 365,
+      "median": 365,
+      "max": 365,
+      "skew_ratio": 1.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "date",
+      "source_file": "calendar + reviews",
+      "distinct": 365,
+      "min": 3818,
+      "median": 3818,
+      "max": 3818,
+      "skew_ratio": 1.0,
+      "viable": false,
+      "rejected_because": "identifier, timestamp, availability, or measure"
+    },
+    {
+      "column": "available",
+      "source_file": "calendar",
+      "distinct": 2,
+      "min": 459028,
+      "median": 696785,
+      "max": 934542,
+      "skew_ratio": 2.04,
+      "viable": false,
+      "rejected_because": "identifier, timestamp, availability, or measure"
+    },
+    {
+      "column": "price",
+      "source_file": "calendar + listings",
+      "distinct": 669,
+      "min": 1,
+      "median": 111,
+      "max": 36646,
+      "skew_ratio": 36646.0,
+      "viable": false,
+      "rejected_because": "identifier, timestamp, availability, or measure"
+    },
+    {
+      "column": "occupied_proxy",
+      "source_file": "derived",
+      "distinct": 2,
+      "min": 459028,
+      "median": 696785,
+      "max": 934542,
+      "skew_ratio": 2.04,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "estimated_booked_revenue",
+      "source_file": "derived",
+      "distinct": 1,
+      "min": 934542,
+      "median": 934542,
+      "max": 934542,
+      "skew_ratio": 1.0,
+      "viable": false,
+      "rejected_because": "only 1 distinct value(s)"
+    },
+    {
+      "column": "id",
+      "source_file": "listings + reviews",
+      "distinct": 3818,
+      "min": 365,
+      "median": 365,
+      "max": 365,
+      "skew_ratio": 1.0,
+      "viable": false,
+      "rejected_because": "identifier, timestamp, availability, or measure"
+    },
+    {
+      "column": "property_type",
+      "source_file": "listings",
+      "distinct": 16,
+      "min": 365,
+      "median": 6205,
+      "max": 632545,
+      "skew_ratio": 1733.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "room_type",
+      "source_file": "listings",
+      "distinct": 3,
+      "min": 42705,
+      "median": 423400,
+      "max": 927465,
+      "skew_ratio": 21.72,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "neighbourhood",
+      "source_file": "listings",
+      "distinct": 81,
+      "min": 365,
+      "median": 6205,
+      "max": 128115,
+      "skew_ratio": 351.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "accommodates",
+      "source_file": "listings",
+      "distinct": 15,
+      "min": 730,
+      "median": 18980,
+      "max": 593855,
+      "skew_ratio": 813.5,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "bedrooms",
+      "source_file": "listings",
+      "distinct": 8,
+      "min": 365,
+      "median": 64240,
+      "max": 882205,
+      "skew_ratio": 2417.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "beds",
+      "source_file": "listings",
+      "distinct": 11,
+      "min": 365,
+      "median": 7665,
+      "max": 803365,
+      "skew_ratio": 2201.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "bathrooms",
+      "source_file": "listings",
+      "distinct": 12,
+      "min": 730,
+      "median": 16060,
+      "max": 1051930,
+      "skew_ratio": 1441.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "review_scores_rating",
+      "source_file": "listings",
+      "distinct": 42,
+      "min": 365,
+      "median": 3285,
+      "max": 285065,
+      "skew_ratio": 781.0,
+      "viable": true,
+      "rejected_because": ""
+    },
+    {
+      "column": "number_of_reviews",
+      "source_file": "listings",
+      "distinct": 195,
+      "min": 365,
+      "median": 1460,
+      "max": 228855,
+      "skew_ratio": 627.0,
+      "viable": true,
+      "rejected_because": ""
+    }
+  ],
+  "workload": "Compute observed nights, occupied nights, occupancy rate, estimated booked-night revenue, and average booked price per listing_id.",
+  "join": {
+    "calendar_rows_before": 1393570,
+    "calendar_listing_rows_after": 1393570,
+    "rows_dropped": 0,
+    "join_seconds": 0.1274,
+    "join_path": "calendar |> listings (many-to-one)",
+    "reviews_joined_rowwise": false,
+    "review_fanout_avoided": true
+  }
+}
