@@ -1,5 +1,5 @@
 run,parallelism_partitions,execution_time_s,groups,speedup_vs_baseline,correct
-Sequential baseline,1,0.9880,3818,1.0000,Yes
-Parallel (2 partitions),2,0.7839,3818,1.2604,Yes
-Parallel (4 partitions),4,0.5675,3818,1.7410,Yes
-Parallel (8 partitions),8,0.5862,3818,1.6854,Yes
+Sequential baseline,1,1.1869,3818,1.0000,Yes
+Parallel (2 partitions),2,0.8123,3818,1.4612,Yes
+Parallel (4 partitions),4,0.6541,3818,1.8146,Yes
+Parallel (8 partitions),8,0.5754,3818,2.0627,Yes
