@@ -195,7 +195,7 @@
     "calendar_rows_before": 1393570,
     "calendar_listing_rows_after": 1393570,
     "rows_dropped": 0,
-    "join_seconds": 0.1274,
+    "join_seconds": 0.1164,
     "join_path": "calendar |> listings (many-to-one)",
     "reviews_joined_rowwise": false,
     "review_fanout_avoided": true
